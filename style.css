@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,800');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background: #EFF1F7;
+}
+
+/* GRID LAYOUT */
+.content {
+    grid-area: content;
+    /*background: url(); falta agregar png fondo*/
+}
+.sidebar {
+    grid-area: sidebar;
+    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+    background: linear-gradient(to right, #ACB6E5, #74ebd5); 
+    justify-content: center;
+}
+.footer {
+    grid-area: footer;
+}
+.container {
+    font-size: 1.5em;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "sidebar"
+        "content"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 800px 250px;
+}
+
+/* PAGE STYLES */
+.content, .sidebar, .footer {
+    padding: 1em;
+}
+nav ul {
+    margin: 0;
+    padding: 0; 
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+nav li {
+    list-style: none;
+    padding: 1em 0;
+}
+nav li a {
+    color: #fff;
+    font-weight: 300;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav li a:hover {
+    opacity: 1;
+}
+.hero {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hero img {
+    width: 200px;
+    border-radius: 50%;
+}
+.hero h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: #080d27;
+}
+.hero p {
+    font-weight: 300;
+    line-height: 1.8em;
+    color: #080d27;
+}
+footer ul {
+    max-width: 640px;
+    margin: 2em auto;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+footer ul li {
+    list-style: none;
+    align-self: flex-end;
+}
+.contact-icon {
+    font-size: 1.5em;
+    color: #c1c6ce;
+}
+.contact-icon:hover {
+    color: #878a90;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1040px) {
+    .container {
+        grid-template-areas: 
+            "sidebar content"
+            "sidebar footer";
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr auto;
+    }
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .sidebar {
+        background: linear-gradient(#ACB6E5, #74ebd5);
+        padding-top: 3em;  
+    }
+    .hero {
+        text-align: left;
+        margin: 2em auto;
+    }
+    .hero img {
+        width: 250px;
+        float: right;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        width: 60%;
+        font-size: .9em;
+    }
+    footer ul {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
