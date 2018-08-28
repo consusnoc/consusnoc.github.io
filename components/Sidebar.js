@@ -7,13 +7,13 @@ export default class extends React.Component {
                 <img src="../static/img/me.jpg" alt="Personal photo"/>
                 <nav>
                     <ul>
-                        <Link href="/MainContent">
+                        <Link href="/MainContent" as={ process.env.BACKEND_URL + '/MainContent'}>
                             <li><a href="#">About me</a></li>
                         </Link>
-                        <Link href="/Portfolio">
+                        <Link href="/Portfolio" as={ process.env.BACKEND_URL + '/Portfolio'}>
                             <li><a href="#">Portfolio</a></li>
                         </Link>
-                        <Link href="/Skills">
+                        <Link href="/Skills" as={ process.env.BACKEND_URL + '/Skills'}>
                             <li><a href="#">Skills</a></li>
                         </Link>
                     </ul>
