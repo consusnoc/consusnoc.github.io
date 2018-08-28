@@ -1,0 +1,27 @@
+{
+  "name": "consusnoc.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/consusnoc/consusnoc.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/consusnoc/consusnoc.github.io/issues"
+  },
+  "homepage": "https://github.com/consusnoc/consusnoc.github.io#readme",
+  "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "next": "^6.1.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
