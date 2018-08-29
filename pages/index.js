@@ -1,14 +1,14 @@
 //INDEX PAGE
 import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
-import MainContent from '../pages/MainContent'
+import Content from '../components/Content'
 
 export default class extends React.Component {
     render() {
         return ( 
             <Layout>
                 <Sidebar />
-                <MainContent />
+                <Content />
             </Layout>
             
         )

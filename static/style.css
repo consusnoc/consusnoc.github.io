@@ -53,16 +53,24 @@ nav li {
 }
 nav li a {
     color: #000;
+    display: inline-block;
     font-weight: 500;
     font-size: 18px;
-    /*opacity: 0.6;*/
-    text-decoration: none;
-    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none; 
+    border-bottom: 2px solid transparent; 
 }
-nav li a:hover {
-    text-decoration: underline;
-    /*text-decoration-style: wavy;*/
-    opacity: 1;
+nav li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+nav li a:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
 .sidebar {
     display: flex;
