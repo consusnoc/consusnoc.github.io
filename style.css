@@ -1,21 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,800');
+@font-face {
+    font-family: "Circular Std Book";
+    src: url("static/fonts/CircularStd-Book.otf")
+}
+@font-face {
+    font-family: "Circular Std Bold";
+    src: url("static/fonts/CircularStd-Bold.otf");
+}
 
 body {
+    background: #fefbed;
+    color: #182672;
+    font-family: 'Circular Std Book', sans-serif;
+    font-size: 12px;
     margin: 0;
     padding: 0;
-    font-family: 'Nunito Sans', sans-serif;
-    background: #EFF1F7;
+}
+a {
+    text-decoration: none;
+    color: #182672;
+}
+a:hover {
+    color: #080d27;
 }
 
 /* GRID LAYOUT */
 .content {
     grid-area: content;
-    /*background: url(); falta agregar png fondo*/
 }
-.sidebar {
-    grid-area: sidebar;
-    background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
-    background: linear-gradient(to right, #ACB6E5, #74ebd5); 
+.header {
+    grid-area: header;
     justify-content: center;
 }
 .footer {
@@ -27,16 +40,38 @@ body {
     height: 100vh;
     display: grid;
     grid-template-areas: 
-        "sidebar"
+        "header"
         "content"
         "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 130px 800px 250px;
 }
+.projects {
+    max-width: 960px;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+    grid-template-rows: 200px;
+}
+.box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
 
 /* PAGE STYLES */
-.content, .sidebar, .footer {
-    padding: 1em;
+.content, .header, .footer {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.header, .footer {
+    width: 78%;
+}
+.logo {
+    font-family: "Circular Std Bold", sans-serif;
+    font-size: 1em;
 }
 nav ul {
     margin: 0;
@@ -45,41 +80,58 @@ nav ul {
     justify-content: space-between;
     text-align: center;
 }
+.nav {
+    display: inline-flex;
+}
+.contact h2 {
+    font-size: 2em;
+}
 nav li {
     list-style: none;
     padding: 1em 0;
 }
 nav li a {
-    color: #fff;
+    color: #182672;
     font-weight: 300;
-    opacity: 0.6;
     text-decoration: none;
     transition: 0.3s;
 }
-nav li a:hover {
-    opacity: 1;
+nav li:first-child {
+    padding-right: 20px;
+}
+nav li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: .1em;
+    background: #182672;
+    transition: width .3s;
+}
+nav li a:hover::after {
+    width: 100%;
+    transition: width .3s;
 }
 .hero {
     max-width: 960px;
     margin: 0 auto;
     text-align: center;
 }
-.hero img {
-    width: 200px;
-    border-radius: 50%;
-}
 .hero h1 {
     font-size: 2em;
     font-weight: 800;
-    color: #080d27;
 }
 .hero p {
     font-weight: 300;
     line-height: 1.8em;
-    color: #080d27;
+    font-size: .9em;
+}
+footer {
+    border-top: 1px solid #182672;
+    margin-top: 40px;
+    padding:20px;
 }
 footer ul {
-    max-width: 640px;
+    max-width: 960px;
     margin: 2em auto;
     padding: 0;
     text-align: center;
@@ -93,47 +145,65 @@ footer ul li {
 }
 .contact-icon {
     font-size: 1.5em;
-    color: #c1c6ce;
+    color: #182672;
 }
 .contact-icon:hover {
-    color: #878a90;
+    color: #080d27;
+}
+/*WAVING HAND ANIMATION*/
+#wave {
+border: none;
+height: .9em;
+cursor: pointer;
+user-select: none;
+}
+
+#wave.hi {
+animation: rotation 0.4s infinite alternate backwards;
+animation-timing-function: ease-in-out;
+} 
+
+@-webkit-keyframes rotation {
+    from {
+        transform: rotate(15deg);
+    }
+    to {
+        transform: rotate(40deg);
+    }
 }
 
 /* MEDIA QUERIES */
 @media (min-width: 1040px) {
     .container {
         grid-template-areas: 
-            "sidebar content"
-            "sidebar footer";
-        grid-template-columns: 300px 1fr;
+            "header"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
+    }
+    .content, .header, .footer {
+        padding: 0px;
     }
     nav ul {
         display: flex;
         justify-content: space-between;
-        flex-direction: column;
     }
-    .sidebar {
-        background: linear-gradient(#ACB6E5, #74ebd5);
-        padding-top: 3em;  
+    .header {
+        margin: 2em auto;
     }
     .hero {
         text-align: left;
         margin: 2em auto;
     }
-    .hero img {
-        width: 250px;
-        float: right;
-    }
     .hero h1 {
-        font-size: 2.5em;
+        font-size: 3em;
     }
     .hero p {
-        width: 60%;
-        font-size: .9em;
+        font-size: 1em;
     }
     footer ul {
-        max-width: 960px;
+        /*max-width: 960px;*/
         margin: 0 auto;
         padding: 0;
     }
