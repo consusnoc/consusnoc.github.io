@@ -7,7 +7,7 @@
     src: url("static/fonts/CircularStd-Bold.otf");
 }
 
-body {
+body {  
     background: #fefbed;
     color: #182672;
     font-family: 'Circular Std Book', sans-serif;
@@ -67,7 +67,7 @@ a:hover {
     padding: 0 1em;
 }
 .header, .footer {
-    width: 78%;
+    width: 960px;
 }
 .logo {
     font-family: "Circular Std Bold", sans-serif;
@@ -129,6 +129,16 @@ footer {
     border-top: 1px solid #182672;
     margin-top: 40px;
     padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .left img {
+    width: 60px;
+    height: auto;
+}
+footer .right a {
+    padding-left: 15px;
 }
 footer ul {
     max-width: 960px;
@@ -143,12 +153,18 @@ footer ul li {
     list-style: none;
     align-self: flex-end;
 }
+.contact {
+    margin: 4em 0px;
+}
 .contact-icon {
     font-size: 1.5em;
     color: #182672;
 }
 .contact-icon:hover {
     color: #080d27;
+}
+.about-me {
+    width: 85%;
 }
 /*WAVING HAND ANIMATION*/
 #wave {
@@ -172,6 +188,26 @@ animation-timing-function: ease-in-out;
     }
 }
 
+/*ABOUT ME STYLES */
+.responsive-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+.habilidades {
+    display: flex;
+}
+.valores, .skills {
+    width: 50%;
+}
+.habilidades h4{
+    margin-bottom: .5em;
+}
+.habilidades p {
+    font-size: .9em;
+    margin: 0px;
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 1040px) {
     .container {
@@ -183,11 +219,12 @@ animation-timing-function: ease-in-out;
         grid-template-rows: 1fr auto;
     }
     .content, .header, .footer {
-        padding: 0px;
+        padding: 2em 0px;
     }
     nav ul {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     .header {
         margin: 2em auto;
@@ -200,7 +237,10 @@ animation-timing-function: ease-in-out;
         font-size: 3em;
     }
     .hero p {
-        font-size: 1em;
+        font-size: 1.2em;
+    }
+    .habilidades p{
+        font-size: .9em;
     }
     footer ul {
         /*max-width: 960px;*/
