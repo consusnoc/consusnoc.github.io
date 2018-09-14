@@ -129,6 +129,16 @@ footer {
     border-top: 1px solid #182672;
     margin-top: 40px;
     padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .left img {
+    width: 60px;
+    height: auto;
+}
+footer .right a {
+    padding-left: 15px;
 }
 footer ul {
     max-width: 960px;
@@ -143,12 +153,18 @@ footer ul li {
     list-style: none;
     align-self: flex-end;
 }
+.contact {
+    margin: 4em 0px;
+}
 .contact-icon {
     font-size: 1.5em;
     color: #182672;
 }
 .contact-icon:hover {
     color: #080d27;
+}
+.about-me {
+    width: 85%;
 }
 /*WAVING HAND ANIMATION*/
 #wave {
@@ -203,7 +219,7 @@ animation-timing-function: ease-in-out;
         grid-template-rows: 1fr auto;
     }
     .content, .header, .footer {
-        padding: 0px;
+        padding: 2em 0px;
     }
     nav ul {
         display: flex;
