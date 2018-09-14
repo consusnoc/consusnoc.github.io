@@ -44,7 +44,11 @@ a:hover {
         "content"
         "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 130px 800px 250px;
+    grid-template-rows: 120px 1fr 150px;
+}
+figure {
+    margin: 0px;
+    font-size: .7em;
 }
 .projects {
     max-width: 960px;
@@ -63,12 +67,11 @@ a:hover {
 
 /* PAGE STYLES */
 .content, .header, .footer {
-    margin: 0 auto;
     padding: 0 1em;
-}
+}/*
 .header, .footer {
     width: 960px;
-}
+}*/
 .logo {
     font-family: "Circular Std Bold", sans-serif;
     font-size: 1em;
@@ -78,6 +81,7 @@ nav ul {
     padding: 0; 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
 }
 .nav {
@@ -114,7 +118,7 @@ nav li a:hover::after {
 .hero {
     max-width: 960px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 .hero h1 {
     font-size: 2em;
@@ -219,7 +223,11 @@ animation-timing-function: ease-in-out;
         grid-template-rows: 1fr auto;
     }
     .content, .header, .footer {
+        margin: 0 auto;
         padding: 2em 0px;
+    }
+    .header, .footer {
+    width: 960px;
     }
     nav ul {
         display: flex;
